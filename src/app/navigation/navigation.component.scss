@@ -1,0 +1,133 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.navigation {
+  height: 11rem;
+  background-color: $color-white;
+  box-shadow: 0 3px 20px rgba($color-black, 0.3);
+  overflow: hidden;
+}
+
+.logo {
+  padding: 2rem 0;
+  margin: 0 5%;
+  float: right;
+  position: relative;
+  height: 11rem;
+  width: 28rem;
+
+  &__img {
+    position: absolute;
+    width: 32%;
+    right: 0;
+  }
+
+  &__head {
+    position: absolute;
+    width: 68%;
+    top: 2rem;
+    left: 0;
+  }
+
+  &__description {
+    display: inline-block;
+    position: absolute;
+    width: 65%;
+    bottom: 2rem;
+    left: 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+}
+
+.list {
+  float: right;
+  list-style: none;
+  font-size: 1.6rem;
+  transform: translateY(130%);
+
+  &__link:visited,
+  &__link:active {
+    text-decoration: none;
+    color: $color-gray-dark;
+  }
+
+  &__item {
+    display: inline-block;
+
+    &:first-child &--icon {
+      padding: 0;
+    }
+
+    &:last-child &--flag {
+      border-left: none;
+    }
+
+    &--icon {
+      display: inline-block;
+      font-weight: 300;
+      padding-right: 1rem;
+    }
+
+    &--flag {
+      display: inline-block;
+      border-left: 1px solid $color-gray-dark-2;
+      padding: 0 1rem;
+    }
+  }
+}
+
+.drop {
+  float: left;
+  overflow: hidden;
+  height: 100%;
+  border-right: 1px solid $color-gray-dark;
+  font-size: 1.4rem;
+
+  &__flag {
+    &--1 {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    &--2 {
+      position: absolute;
+      top: 1rem;
+      right: 0;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 3rem;
+  }
+
+  &__arrow {
+    transform: rotate(90deg);
+    display: inline-block;
+    position: absolute;
+    top: 2rem;
+    left: 6.5rem;
+    font-size: 5rem;
+    font-weight: 100;
+  }
+}
+
+.container {
+  display: inline-block;
+  height: 7rem;
+  width: 13rem;
+  position: relative;
+  top: 30%;
+  margin: 0 3rem;
+
+  &:link,
+  &:visited {
+    color: $color-gray-dark;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
