@@ -39,15 +39,38 @@
   </ul>
 
   <form class="form" action="">
-    <h2 class="form__head">پرواز داخلی</h2>
-    <div class="form__section">
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Favorite food" value="Sushi">
+
+    <h2 class="head">پرواز داخلی</h2>
+    <div class="fields">
+      <div class="section">
+        <mat-form-field class="section__field">
+          <input matInput placeholder="مبدا" value="">
+        </mat-form-field>
+
+        <i class="icon-basic-world section__icon"></i>
+
+        <mat-form-field class="section__field">
+          <input matInput placeholder="مقصد" value="">
+        </mat-form-field>
+      </div>
+
+      <div class="section">
+
+        <!-- <mat-form-field class="section__field">
+        <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Favorite food" value="Sushi">
-      </mat-form-field>
+
+      <mat-form-field class="section__field">
+        <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field> -->
+
+      </div>
     </div>
+
   </form>
 
 </header>

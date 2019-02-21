@@ -9,9 +9,14 @@
   z-index: 10;
   position: fixed;
   width: 100%;
+
+  @include respond(phone) {
+    height: 8rem;
+  }
 }
 
 .logo {
+  cursor: pointer;
   padding: 1rem 0;
   margin: 0 5%;
   float: right;
@@ -22,6 +27,11 @@
   @include respond(tab-land) {
     margin: 0 2.5%;
     width: 24rem;
+  }
+
+  @include respond(phone) {
+    padding: 1rem;
+    height: 8rem;
   }
 
   &__img {
@@ -35,6 +45,11 @@
     width: 68%;
     top: 2rem;
     left: 0;
+
+    @include respond(phone) {
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
 
   &__description {
@@ -50,6 +65,10 @@
       font-size: 1rem;
       bottom: 3rem;
     }
+
+    @include respond(phone) {
+      display: none;
+    }
   }
 }
 
@@ -58,6 +77,7 @@
   list-style: none;
   font-size: 1.6rem;
   transform: translateY(130%);
+
   @include respond(tab-land) {
     font-size: 1.4rem;
     transform: translateY(160%);
@@ -76,6 +96,11 @@
   &__item {
     display: inline-block;
 
+    &:hover &--icon,
+    &:hover &--flag {
+      color: $color-btn;
+    }
+
     &:first-child &--icon {
       padding: 0;
     }
@@ -93,9 +118,11 @@
       display: inline-block;
       border-left: 1px solid $color-gray-dark-2;
       padding: 0 1rem;
+      // transform: translateY(-20%);
     }
   }
 }
+
 
 .drop {
   float: left;
@@ -103,16 +130,27 @@
   height: 100%;
   border-right: 1px solid $color-gray-dark;
   font-size: 1.4rem;
+
   @include respond(tab-land) {
     font-size: 1.2rem;
   }
 
+  @include respond(phone) {
+    border: none;
+  }
+
   &__flag {
+
+    @include respond(phone) {
+      display: none;
+    }
+
     &--1 {
       position: absolute;
       top: 0;
       right: 0;
     }
+
     &--2 {
       position: absolute;
       top: 1rem;
@@ -125,6 +163,12 @@
     top: 0;
     left: 0;
     font-size: 3rem;
+
+    @include respond(phone) {
+      font-size: 4rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 
   &__arrow {
@@ -139,6 +183,10 @@
     @include respond(tab-land) {
       left: 6rem;
     }
+    @include respond(phone) {
+      top: 3rem;
+      left: 2.3rem;
+    }
   }
 }
 
@@ -147,18 +195,38 @@
   height: 7rem;
   width: 13rem;
   position: relative;
+  overflow: hidden;
   top: 30%;
   margin: 0 3rem;
+
+  &--1:hover .drop__flag--1,
+  &--1:hover .drop__icon--1,
+  &--1:hover .drop__arrow--1 {
+    color: $color-btn;
+  }
+  &--2:hover .drop__flag--2,
+  &--2:hover .drop__icon--2,
+  &--2:hover .drop__arrow--2 {
+    color: $color-btn;
+  }
 
   @include respond(tab-land) {
     width: 12rem;
     margin: 0 2rem;
   }
 
+  @include respond(phone) {
+    width: 5rem;
+    height: 8rem;
+    margin: 0;
+    top: 0;
+  }
+
   &:link,
   &:visited {
     color: $color-gray-dark;
   }
+
   &:hover {
     cursor: pointer;
   }
