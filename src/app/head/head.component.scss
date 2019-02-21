@@ -11,9 +11,11 @@
     url(../../assets/nature.jpg);
   background-size: cover;
 
-  // @include respond(phone) {
-  //   background-image: linear-gradient(100deg, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)),
-  // }
+  @include respond(phone) {
+    background-image: linear-gradient(100deg, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8));
+    height: 75rem;
+    top: 8rem;
+  }
 }
 
 .list {
@@ -32,12 +34,19 @@
     height: 50rem;
   }
 
-  &__item {
+  @include respond(phone) {
+    width: 90%;
+    height: 12rem;
+    top: 2rem;
+    right: 51%;
+    transform: translate(50%, 0);
+  }
+
+  &__link {
     display: inline-block;
     width: 18rem;
     height: 8rem;
     position: relative;
-    margin-bottom: 2rem;
     background-image: linear-gradient(to right, $color-btn-light, $color-btn);
     overflow: hidden;
     border-radius: 30rem;
@@ -45,9 +54,17 @@
     transition: all 0.3s;
     backface-visibility: hidden;
 
+    
     @include respond(tab-port) {
       width: 15rem;
       height: 6rem;
+    }
+
+    @include respond(phone) {
+      height: 10rem;
+      width: 6rem;
+      margin: 0 auto;
+      border-radius: 2px;
     }
 
     &:last-child {
@@ -77,6 +94,11 @@
       @include respond(tab-port) {
         font-size: 4rem;
       }
+
+      @include respond(phone) {
+        padding-right: 0;
+        right: 15%;
+      }
     }
 
     &--flag {
@@ -88,13 +110,27 @@
       top: 50%;
       transform: translateY(-60%);
       color: $color-white;
+
+      @include respond(phone) {
+        width: 6rem;
+        top: 80%;
+      }
+    }
+  }
+
+  &__item {
+    display: inline-block;
+    margin-bottom: 2rem;
+
+    @include respond(phone) {
+      width: ( 100% / 6 );
     }
   }
 }
 
 .head {
   text-align: center;
-  font-size: 4rem;
+  font-size: 3rem;
   width: 20rem;
   margin: 2rem auto;
   text-align: center;
@@ -113,15 +149,17 @@
   position: absolute;
   top: 50%;
   left: 10%;
-  transform: translateY(-50%);
+  transform: translate(0, -50%);
 
   @include respond(tab-port) {
     left: 5%;
   }
-  // @include respond(tab-port) {
-  //   left: 50%;
-  //   transform: translateX(-50%);
-  // }
+
+  @include respond(phone) {
+    left: 50%;
+    transform: translate(-50%, -40%);
+    width: 40rem;
+  }
 }
 
 .section {
@@ -132,6 +170,10 @@
   margin: 0 auto 2rem auto;
   background-image: linear-gradient(70deg, rgba($color-white, 0.6) 0%, rgba($color-white, 0.6) 50%, rgba($color-white, 0.8) 50%, rgba($color-white, 0.8) 100%,);
 
+  @include respond(phone) {
+    padding: 0 1rem;
+  }
+
   &:last-child {
     margin: 0 auto;
   }
@@ -139,7 +181,6 @@
   &__field {
     width: 45%;
     font-size: 1.4rem;
-    border-radius: 5px;
 
     &:last-child {
       float: left;
@@ -153,7 +194,4 @@
     transform: translate(-50%, -40%);
     font-size: 3rem;
   }
-}
-.fields {
-  margin-top: 5rem;
 }
